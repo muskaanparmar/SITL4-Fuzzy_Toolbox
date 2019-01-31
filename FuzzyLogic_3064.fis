@@ -1,0 +1,40 @@
+[System]
+Name='FuzzyLogic_3064'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='food'
+Range=[0 10]
+NumMFs=2
+MF1='rancid':'trimf',[-4 0.0487540628385705 4.06]
+MF2='delicious':'trimf',[3.02 9.97 9.98]
+
+[Input2]
+Name='service'
+Range=[0 10]
+NumMFs=3
+MF1='poor':'trimf',[-4 0 3.028]
+MF2='good':'trimf',[1 5 9]
+MF3='excellent':'trimf',[5.939 9.949 13.95]
+
+[Output1]
+Name='tip'
+Range=[0 30]
+NumMFs=3
+MF1='cheap':'trimf',[-12 0 12]
+MF2='average':'trimf',[3.006 15 27]
+MF3='generous':'trimf',[18 30 42]
+
+[Rules]
+1 1, 1 (1) : 2
+0 2, 2 (1) : 2
+2 3, 3 (1) : 2
